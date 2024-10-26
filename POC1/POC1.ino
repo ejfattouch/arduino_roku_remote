@@ -109,7 +109,7 @@ void toggleModes() {
   if (checkBtn(BUTTON_PIN_TOGGLE) && lastStateToggle == LOW) {
     mode = ++mode % 3;  // The magic number 3 is the number of modes
     delay(200);
-    startFlashing(led_pins[mode], 3);
+    startFlashing(led_pins[mode], 2); // Setting to 2 will flash LED 3 times because the state of the next LED will be off by default.
   }
   // Update last state
   lastStateToggle = checkBtn(BUTTON_PIN_TOGGLE);

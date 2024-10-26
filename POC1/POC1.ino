@@ -24,10 +24,7 @@ bool lastStateForward = LOW;
 bool lastStateBackward = LOW;
 bool lastStateToggle = LOW;
 
-bool isStartup;
-
 void setup() {
-  isStartup = true;
   // Set pin modes
   for (int i = 0; i < sizeof(led_pins) / sizeof(led_pins[0]); i++) {
     pinMode(led_pins[i], OUTPUT);
@@ -83,6 +80,7 @@ void startFlashing(uint8_t led_pin, uint8_t n) {
   blinkState.active = true;  // Set active to true to start flashing
 }
 
+// this function will be called every loop() itiration to verify the status of the LED and check if it needs to be updated or not.
 void updateLED() {
   // Handle LED flashing
   if (blinkState.active) {
@@ -118,11 +116,7 @@ void toggleModes() {
 }
 
 bool checkBtn(uint8_t btn_pin) {
-  if (digitalRead(btn_pin) == HIGH) {
-    isStartup = false;
-    return true;
-  }
-  return false;
+  return digitalRead(btn_pin) == HIGH;
 }
 
 void directionalBtnPress(uint8_t pin, bool &lastState) {

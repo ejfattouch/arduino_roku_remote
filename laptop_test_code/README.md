@@ -41,3 +41,7 @@ This file runs the tests we want to perform on a laptop before implementing them
 
 ### `rokuIPDiscovery.cpp`
 This file contains handles tasks related to querying the network and finding the IP address of a roku device)
+
+### `rokuSendCommand.cpp`
+This file provides a class `RokuCommandHandler` which handles sending commands 
+as http POST requests to emulate button presses on a Roku Remote

@@ -142,6 +142,7 @@ void connectToWiFi() {
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
+    cycleAnimation();
     delay(500);
     Serial.print(".");
   }

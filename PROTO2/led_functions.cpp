@@ -42,3 +42,10 @@ void turnOnLeds(int mode) {
     }
   }
 }
+
+int status = 0;
+
+void cycleAnimation(){
+  turnOnLeds(status);
+  status = ++status % 3;
+}

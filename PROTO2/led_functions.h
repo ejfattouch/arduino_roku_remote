@@ -10,5 +10,6 @@ void flashLED(uint8_t led_pin, uint8_t n, long interval = 200);
 // This turns on the led specified by the mode and turns off the others
 // Mode: 0 is led0, 1 is led1, 2 is led2, 3 is all leds
 void turnOnLeds(int mode);
+void cycleAnimation(); // Status is element of [0..2]
 
 #endif
